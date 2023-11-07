@@ -25,4 +25,9 @@ public class ProductService implements IProductService{
     public Product findProductById(Integer idProduct) {
         return iProductRepository.findById(idProduct).orElse(null);
     }
+
+    @Override
+    public Product findProductByName(String name) {
+        return iProductRepository.getProductByName(name);
+    }
 }

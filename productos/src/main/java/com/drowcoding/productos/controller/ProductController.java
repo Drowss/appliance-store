@@ -27,4 +27,9 @@ public class ProductController {
         iProductService.deleteProduct(idProduct);
     }
 
+    @GetMapping("/name/{productName}")
+    public Product getProductByName(@PathVariable String productName){
+        return iProductService.findProductByName(productName);
+    }
+
 }
