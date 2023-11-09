@@ -31,6 +31,7 @@ public class CartService implements ICartService {
         Cart cart = findCarrito(idCart);
         ProductDTO productDTO = iProductAPI.getProduct(idProduct);
         cart.getProductDTOList().add(productDTO.getName());
+        cart.setTotalPrice(cart.getTotalPrice() + productDTO.getPrice());
         this.createCarrito(cart);
     }
 
